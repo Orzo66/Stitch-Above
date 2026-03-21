@@ -1,0 +1,134 @@
+/******************************************
+/* VARIABLES & RESET
+/*******************************************/
+/* Variables */
+:root {
+  --primary-red: #91091E;
+  --secondary-orange: #DA723C;
+  --tertiary-tan: #C39E5C;
+  --cream: #FDF1D6;
+  --banana: #FEFEA4;
+}
+
+
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+  background-color: var(--primary-red);
+  color: var(--cream);
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+.mainpage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertical center */
+  align-items: center; /* Horizontal center */
+  min-height: 100vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+.mainHeader {
+  font-size: clamp(3rem, 8vw, 6rem); /* Responsive: gets bigger on desktops */
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: var(--cream);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.storeImage {
+  width: 100%;
+  max-width: 900px; /* Keeps image from getting too big */
+  height: auto;
+  border: 4px solid var(--tertiary-tan); /* Uses your tan variable as a frame */
+  border-radius: 10%;
+  margin: 2rem 0;
+  box-shadow: 0 10px 30x rgba(0, 0, 0, 0.3);
+}
+
+.mainSubheading {
+  font-size: clamp(1.5rem, 4vw, 3rem); /* Slightly smaller than H1 */
+  font-weight: 400;
+  color: var(--cream); /* Using your accent orange */
+  letter-spacing: 1px;
+}
+
+.mainSubheading strong {
+  color: var(--banana);
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
