@@ -96,7 +96,7 @@ html, body {
 }
 
 body {
-  background-color: var(--pure-black);
+  background-color: var(--dark-black);
   color: var(--vanilla);
 
   /* Sticky Footer Logic */
@@ -123,7 +123,7 @@ h1, h2, h3 {
 /***** Navigation (Desktop and Mobile *****/
 
 nav {
-  background-color: var(--bright-red);
+  background-color: var(--primary-red);
   padding: 10px 40px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -192,6 +192,11 @@ footer {
      flex-direction: column;
      gap: 8px;
      flex: 1; /* forcing all three zones to take up equal width */
+}
+
+.footer-side img {
+     height: auto;
+     width: 10rem;
 }
 
 .footer-center {
@@ -277,23 +282,14 @@ footer {
 /*******************************************/
 
 /* Main Storefront Image (Centered & Promenant on Main Page */
-.storeImage {
+.mainLogoImage {
   display: block;
   margin: 1.5rem auto;
-  max-width: 650px; /* Kept a bit smaller for elegance */
+  max-width: 60rem; /* Kept a bit smaller for elegance */
   width: 90%;
   border: 3px solid var(--french-vanilla);
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-
-/* Main Logo under Storefront Image on Main Page */
-.mainLogoImage {
-  max-width: 250px; /* Shrink it so the store shines */
-  height: auto;
-  margin: 1rem 0;
-  /* Soften the edges of the white background on logo */
-  border-radius: 8px;
 }
 
 /* Container for the logo to ensure it doesn't stretch */
