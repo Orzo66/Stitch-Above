@@ -132,6 +132,29 @@ nav {
   min-height: 70px; /* Gives the nav a consistent height */
 }
 
+/* Container for the logo to ensure it doesn't stretch */
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+/* The Mini Nav Logo */
+.nav-logo img {
+  height: 50px; /* Fixed height keeps the nav bar from growing/shrinking */
+  width: auto;
+  border-radius: 4px; /* Softens the white square corners slightly */
+}
+
+/* Update Nav for Alignment */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+}
+
 /* The Container for Links */
 .nav-links {
      display: flex;
@@ -142,8 +165,8 @@ nav {
 /* The Links (Buttons) */
 .nav-links a{
      text-decoration: none;
-     background-color: var(--vanilla);
-     color: var(--pure-black);
+     background-color: var(--tertiary-tan);
+     color: var(--dark-black);
      font-family: "Outfit", sans-serif;
      font-weight: 700;
      padding: 8px 18px;
@@ -153,7 +176,8 @@ nav {
 }
 
 .nav-links a:hover {
-     background-color: var(--french-vanilla);
+     background-color: var(--dark-brown);
+     color: var(--vanilla);
      transform: translateY(-2px);
      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -264,7 +288,7 @@ footer {
 }
 
 .mainStatement {
-  font-size: clamp(1.2rem, 2.5vw, 2rem); /* Slightly smaller than the H2 */
+  font-size: clamp(1.5rem, 2.9vw, 2rem); /* Slightly smaller than the H2 */
   color: var(--french-vanilla); /* Separate color than titles for classy look */
   font-style: italic; /* add a little spritz to it with an italic look */
   font-weight: 300;
@@ -292,27 +316,7 @@ footer {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* Container for the logo to ensure it doesn't stretch */
-.nav-logo {
-  display: flex;
-  align-items: center;
-}
 
-/* The Mini Nav Logo */
-.nav-logo img {
-  height: 50px; /* Fixed height keeps the nav bar from growing/shrinking */
-  width: auto;
-  border-radius: 4px; /* Softens the white square corners slightly */
-}
-
-/* Update Nav for Alignment */
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px;
-}
 
 /******************************************
 /* MEDIA QUERIES
