@@ -106,7 +106,7 @@ body {
 }
 
 /* Ensures content sectoin takes up all available space, pushing footer to the very bottom */
-.mainpage, .about-page {
+.mainpage, .about-page, .contact-page {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -120,6 +120,10 @@ h1, h2, h3 {
   font-family: "DM Serif Text", serif;
 }
 
+p {
+     font-family: "Outfit", sans-serif;
+     font-size: 1.5rem;
+}
 /***** Navigation (Desktop and Mobile *****/
 
 nav {
@@ -245,12 +249,14 @@ footer {
      margin: 5px;
 }
 
-.footer-side a{
+footer a {
      color: var(--cream);
-     padding: 12px 25px;
-     border-radius: 50px;
-     transition: all 0.3s ease;
-     white-space: nowrap;
+     text-decoration: underline;
+     transition: color 0.3s ease;
+}
+
+footer a:hover {
+     color: var(--tertiary-tan);
 }
 
 /******************************************
@@ -298,7 +304,53 @@ footer {
 }
 
 .mainStatement, .about-page p {
-  margin-bottom: auto; /* Pushes the footer away from teh bottom */
+  margin-bottom: auto; /* Pushes the footer away from thh bottom */
+}
+
+.contact-page {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     text-align: center;
+     padding: 40px 20px;
+}
+
+.store-img {
+     max-width: 75%;
+     width: auto;
+     height: auto;
+     border-radius: 15px;
+     margin-bottom: 25px;
+}
+
+.social-row {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 15px;
+}
+
+.contact-info {
+     font-family: "Outfit", sans-serif;
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+     margin-bottom: 30px;
+     /* fix for mobile as email address is so long */
+     font-size: clamp(1.2rem, 6vw, 2.5rem);
+     /* saftey net if address is still too long */
+     word-wrap: break-word;
+     overflow-wrap: break-word;
+     width: 100%;
+     max-width: 90vw; /* prevents from touching edge of screen */
+     margin-left: auto;
+     margin-right: auto;
+}
+
+.social-icons img {
+     width: 50px;
+     height: 50px;
+     margin: 0;
 }
 
 /******************************************
