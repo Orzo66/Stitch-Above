@@ -118,6 +118,31 @@ body {
 
 h1, h2, h3 {
   font-family: "DM Serif Text", serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: clamp(3rem, 8vw, 6rem); /* Responsive: gets bigger on desktops */
+  font-weight: 800;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--cream);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 4rem); /* Slightly smaller than H1 */
+  font-weight: 400;
+  color: var(--cream);
+  letter-spacing: 1px;
+}
+
+h3 {
+     font-size: clamp(1.8rem, 3vw, 2.8rem);
+     font-weight: 400;
+     color: var(--cream);
+     letter-spacing: 1px;
 }
 
 p {
@@ -272,23 +297,6 @@ footer a:hover {
   padding: 2rem;
 }
 
-.mainHeader {
-  font-size: clamp(3rem, 8vw, 6rem); /* Responsive: gets bigger on desktops */
-  font-weight: 800;
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
-  color: var(--cream);
-  text-transform: uppercase;
-  letter-spacing: 4px;
-}
-
-.mainSubheading {
-  font-size: clamp(1.5rem, 4vw, 3rem); /* Slightly smaller than H1 */
-  font-weight: 400;
-  color: var(--cream);
-  letter-spacing: 1px;
-}
-
 .mainSubheading strong {
   color: var(--bright-red);
 }
@@ -315,12 +323,122 @@ footer a:hover {
      padding: 40px 20px;
 }
 
+.contact-page > h1 {
+     margin-bottom: 7%;
+}
+
+.address-title {
+     color: var(--tertiary-tan); /* Give the address a distinct "Title" look */
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     margin-bottom: 5px;
+     border-bottom: 2px solid var(--primary-red); /* adds nice "underline" anchor */ 
+     display: inline-block; /* Keeps border from stretching across whole screen */
+     width: fit-content; /* Shrinks widthto match text */
+     margin: 0 auto 10px; /* Centers box and adds some bottom spacing */
+     padding-bottom: 5px;
+     font-size: 2rem; /* adjusting address for a little more punch */
+}
+
 .store-img {
-     max-width: 75%;
+     max-width: 50%;
      width: auto;
      height: auto;
      border-radius: 15px;
      margin-bottom: 25px;
+     padding: 0 1%;
+}
+
+.directions p {
+     max-width: 55ch; /* Limits line length to ~55 characters per line */
+     margin-left: auto;
+     margin-right: auto;
+     line-height: 1.6; /* Adds some vertical breathing room */
+     text-align: left; /* making left aligned since this is long text and easier to read this way */
+}
+
+/* Style the IMPORTANT parts of the directions */
+.directions strong {
+    color: var(--primary-orange); /* Or --bright-red */
+    font-weight: 900;
+    /* This creates a subtle "glow" or highlight effect */
+    background-color: rgba(247, 127, 0, 0.15); 
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase; /* Makes it look like a road sign */
+    border: 1px solid rgba(247, 127, 0, 0.3);
+}
+
+.map-btn {
+     display: inline-block;
+     margin: 15px auto;
+     padding: 10px 20px;
+     border: 1px solid var(--tertiary-tan);
+     color: var(--tertiary-tan);
+     text-decoration: none;
+     font-family: "Outfit", sans-serif;
+     font-weight: 600px;
+     line-height: 1.3;
+     border-radius: 5px;
+     transition: all 3s ease;
+     font-size: 1.1rem;
+}
+
+.map-btn:hover {
+     background-color: var(--tertiary-tan);
+     color: var(--dark-black);
+}
+
+.garage-note {
+     opacity: 0.8;
+     margin-top: 5px;
+}
+
+.section-title {
+     margin-bottom: 20px; /* forcing space between title and note */
+}
+
+/* Supplier Section Styling */
+.suppliers-container {
+    /* margin: 40px 0; */
+     margin-top: 60px;
+     margin-bottom: 40px;
+     width: 100%;
+     max-width: 600px; /* Keeps it tight like the directions */
+}
+
+.supplier-note {
+     font-size: 1.3rem !important; /* hate using these, but necessary here (smaller than main txt */
+     line-height: 1.5;
+     font-style: italic;
+     color: var(--french-vanilla);
+     margin-bottom: 30px;
+}
+
+.supplier-links {
+     display: flex;
+     gap: 20px;
+     justify-content: center;
+}
+
+.supplier-btn {
+     flex: 1;
+     background-color: transparent;
+     border: 2px solid var(--tertiary-tan);
+     color: var(--vanilla);
+     padding: 18px 30px;
+     text-decoration: none;
+     font-family: "Outfit", sans-serif;
+     font-weight: 700;
+     font-size: 1.2rem;
+     border-radius: 8px;
+     transition: all 0.3s ease;
+     text-align: center;
+}
+
+.supplier-btn:hover {
+     background-color: var(--tertiary-tan);
+     color: var(--dark-black);
 }
 
 .social-row {
@@ -335,7 +453,7 @@ footer a:hover {
      display: flex;
      flex-direction: column;
      gap: 10px;
-     margin-bottom: 30px;
+     margin: 1% 0;
      /* fix for mobile as email address is so long */
      font-size: clamp(1.2rem, 6vw, 2.5rem);
      /* saftey net if address is still too long */
@@ -432,5 +550,36 @@ footer a:hover {
           margin-bottom: 20px;
           align-items: center !important; /* Forces all footer items to center */
           text-align: center !important;
+     }
+
+     .contact-page {
+          gap: 45px; /* adjust this as necessary to get perfect mobile fit */
+          padding-top: 40px; /* tighten up the padding if necessary - can change or remove */
+     }
+
+     .contact-info, .store-img {
+          margin: 0 auto;
+          width: 95%; /* gives text a little more room on the sides */
+     }
+
+     .directions {
+          margin-bottom: 10px;
+     }
+
+     .contact-details {
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+     }
+
+     .store-img {
+          max-width: 95%; /* let it be wider on mobile */
+          padding: 0;
+     }
+
+     /* Mobile handling for suppliers */
+     .supplier-links {
+          flex-direction: column;
+          width: 100%;
      }
 }
