@@ -1,0 +1,585 @@
+/******************************************
+/* VARIABLES & RESET
+/*******************************************/
+/* Variables */
+:root {
+  --primary-red: #91091E;
+  --orange: #DA723C;
+  --primary-orange: #F77F00;
+  --secondary-orange: #C44A3A;
+  --tertiary-tan: #C39E5C;
+  --light-tan: #EED9B9;
+  --cream: #FDF1D6;
+  --banana: #FEFEA4;
+  --primary-brown: #5D4037;
+  --light-brown: #8D6E63;
+  --dark-brown: #3E2723;
+  --dark-black: #091413;
+  --charcoal: #262626;
+
+  --pure-black: #000;
+  --french-vanilla: #E2DDB4;
+  --vanilla: #F6EFD2;
+  --bright-red: #E43636;
+}
+
+
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+html, body {
+  height: 100%; /* Necessary for the body to know how tall the screen is */
+}
+
+body {
+  background-color: var(--dark-black);
+  color: var(--vanilla);
+
+  /* Sticky Footer Logic */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Ensures content sectoin takes up all available space, pushing footer to the very bottom */
+.mainpage, .about-page, .contact-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding-top: 80px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  font-family: "DM Serif Text", serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: clamp(3rem, 8vw, 6rem); /* Responsive: gets bigger on desktops */
+  font-weight: 800;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--cream);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 4rem); /* Slightly smaller than H1 */
+  font-weight: 400;
+  color: var(--cream);
+  letter-spacing: 1px;
+}
+
+h3 {
+     font-size: clamp(1.8rem, 3vw, 2.8rem);
+     font-weight: 400;
+     color: var(--cream);
+     letter-spacing: 1px;
+}
+
+p {
+     font-family: "Outfit", sans-serif;
+     font-size: 1.5rem;
+}
+/***** Navigation (Desktop and Mobile *****/
+
+nav {
+  background-color: var(--primary-red);
+  padding: 10px 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between; /* makes sure spacing is correct */
+  align-items: center; /* vertically centers everything */
+  min-height: 70px; /* Gives the nav a consistent height */
+}
+
+/* Container for the logo to ensure it doesn't stretch */
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+/* The Mini Nav Logo */
+.nav-logo img {
+  height: 50px; /* Fixed height keeps the nav bar from growing/shrinking */
+  width: auto;
+  border-radius: 4px; /* Softens the white square corners slightly */
+}
+
+/* Update Nav for Alignment */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+}
+
+/* The Container for Links */
+.nav-links {
+     display: flex;
+     gap: 20px; /* Tightens gap slightly to fit everything better */
+     align-items: center;
+}
+
+/* The Links (Buttons) */
+.nav-links a{
+     text-decoration: none;
+     background-color: var(--tertiary-tan);
+     color: var(--dark-black);
+     font-family: "Outfit", sans-serif;
+     font-weight: 700;
+     padding: 8px 18px;
+     border-radius: 50px;
+     transition: all 0.3s ease;
+     white-space: nowrap;
+}
+
+.nav-links a:hover {
+     background-color: var(--dark-brown);
+     color: var(--vanilla);
+     transform: translateY(-2px);
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hamburger Icon (Hidden on Desktop) */
+.hamburger {
+     display: none;
+     font-size: 2rem;
+     color: var(--vanilla);
+     cursor: pointer;
+     background: none;
+     border: none;
+     position: absolute;
+     right: 20px;
+     top: 15px;
+}
+
+
+/***************** FOOTER ****************/
+
+footer {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     align-items: center;
+     background-color: var(--primary-red);
+     color: var(--vanilla);
+     padding: 15px 60px;
+     margin-top: auto; /* Ensures footer stays at bottom */
+     font-family: "Outfit", sans-serif;
+}
+
+/* Usiung individual zones with flex to stack their own text vertically */
+.footer-side, .footer-center {
+     display: flex;
+     flex-direction: column;
+     gap: 8px;
+     flex: 1; /* forcing all three zones to take up equal width */
+}
+
+.footer-side img {
+     height: auto;
+     width: 10rem;
+}
+
+.footer-center {
+     align-items: center; /* keep middle content centered */
+     text-align: center;
+}
+
+.footer-side:first-child {
+    align-items: flex-start;
+    text-align: left; 
+}
+
+.footer-side:last-child {
+     align-items: flex-end;
+     text-align: right
+}
+
+/* Size the footer social icons */
+.footer-social img {
+     width: 50px;
+     height: 50px;
+     margin: 5px;
+}
+
+footer a {
+     color: var(--cream);
+     text-decoration: underline;
+     transition: color 0.3s ease;
+}
+
+footer a:hover {
+     color: var(--tertiary-tan);
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+.mainpage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertical center */
+  align-items: center; /* Horizontal center */
+  text-align: center;
+  padding: 2rem;
+}
+
+.mainSubheading strong {
+  color: var(--bright-red);
+}
+
+.mainStatement {
+  font-size: clamp(1.5rem, 2.9vw, 2rem); /* Slightly smaller than the H2 */
+  color: var(--french-vanilla); /* Separate color than titles for classy look */
+  font-style: italic; /* add a little spritz to it with an italic look */
+  font-weight: 300;
+  margin-top: 1rem;
+  letter-spacing: 1px;
+  opacity: 0.9; /* Softens the text up slighly so it doesn't compete with the H1 */
+}
+
+.mainStatement, .about-page p {
+  margin-bottom: auto; /* Pushes the footer away from thh bottom */
+}
+
+.contact-page {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     text-align: center;
+     padding: 40px 20px;
+}
+
+.contact-page > h1 {
+     margin-bottom: 7%;
+}
+
+.address-title {
+     color: var(--tertiary-tan); /* Give the address a distinct "Title" look */
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     margin-bottom: 5px;
+     border-bottom: 2px solid var(--primary-red); /* adds nice "underline" anchor */ 
+     display: inline-block; /* Keeps border from stretching across whole screen */
+     width: fit-content; /* Shrinks widthto match text */
+     margin: 0 auto 10px; /* Centers box and adds some bottom spacing */
+     padding-bottom: 5px;
+     font-size: 2rem; /* adjusting address for a little more punch */
+}
+
+.store-img {
+     max-width: 50%;
+     width: auto;
+     height: auto;
+     border-radius: 15px;
+     margin-bottom: 25px;
+     padding: 0 1%;
+}
+
+.directions p {
+     max-width: 55ch; /* Limits line length to ~55 characters per line */
+     margin-left: auto;
+     margin-right: auto;
+     line-height: 1.6; /* Adds some vertical breathing room */
+     text-align: left; /* making left aligned since this is long text and easier to read this way */
+}
+
+/* Style the IMPORTANT parts of the directions */
+.directions strong {
+    color: var(--primary-orange); /* Or --bright-red */
+    font-weight: 900;
+    /* This creates a subtle "glow" or highlight effect */
+    background-color: rgba(247, 127, 0, 0.15); 
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase; /* Makes it look like a road sign */
+    border: 1px solid rgba(247, 127, 0, 0.3);
+}
+
+.map-btn {
+     display: inline-block;
+     margin: 15px auto;
+     padding: 10px 20px;
+     border: 1px solid var(--tertiary-tan);
+     color: var(--tertiary-tan);
+     text-decoration: none;
+     font-family: "Outfit", sans-serif;
+     font-weight: 600px;
+     line-height: 1.3;
+     border-radius: 5px;
+     transition: all 3s ease;
+     font-size: 1.1rem;
+}
+
+.map-btn:hover {
+     background-color: var(--tertiary-tan);
+     color: var(--dark-black);
+}
+
+.garage-note {
+     opacity: 0.8;
+     margin-top: 5px;
+}
+
+.section-title {
+     margin-bottom: 20px; /* forcing space between title and note */
+}
+
+/* Supplier Section Styling */
+.suppliers-container {
+    /* margin: 40px 0; */
+     margin-top: 60px;
+     margin-bottom: 40px;
+     width: 100%;
+     max-width: 600px; /* Keeps it tight like the directions */
+}
+
+.supplier-note {
+     font-size: 1.3rem !important; /* hate using these, but necessary here (smaller than main txt */
+     line-height: 1.5;
+     font-style: italic;
+     color: var(--french-vanilla);
+     margin-bottom: 30px;
+}
+
+.supplier-links {
+     display: flex;
+     gap: 20px;
+     justify-content: center;
+}
+
+.supplier-btn {
+     flex: 1;
+     background-color: transparent;
+     border: 2px solid var(--tertiary-tan);
+     color: var(--vanilla);
+     padding: 18px 30px;
+     text-decoration: none;
+     font-family: "Outfit", sans-serif;
+     font-weight: 700;
+     font-size: 1.2rem;
+     border-radius: 8px;
+     transition: all 0.3s ease;
+     text-align: center;
+}
+
+.supplier-btn:hover {
+     background-color: var(--tertiary-tan);
+     color: var(--dark-black);
+}
+
+.social-row {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 15px;
+}
+
+.contact-info {
+     font-family: "Outfit", sans-serif;
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+     margin: 1% 0;
+     /* fix for mobile as email address is so long */
+     font-size: clamp(1.2rem, 6vw, 2.5rem);
+     /* saftey net if address is still too long */
+     word-wrap: break-word;
+     overflow-wrap: break-word;
+     width: 100%;
+     max-width: 90vw; /* prevents from touching edge of screen */
+     margin-left: auto;
+     margin-right: auto;
+}
+
+.social-icons img {
+     width: 50px;
+     height: 50px;
+     margin: 0;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+/* Main Storefront Image (Centered & Promenant on Main Page */
+.mainLogoImage {
+  display: block;
+  margin: 1.5rem auto;
+  max-width: 60rem; /* Kept a bit smaller for elegance */
+  width: 90%;
+  border: 3px solid var(--french-vanilla);
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/******************************************
+/* MEDIA QUERIES
+/*******************************************/
+@media screen and (max-width: 768px) {
+     h1 {
+          font-size: 2.5rem;
+     }
+
+     h2 {
+          font-size: 1.8rem;
+     }
+
+     /* Navigation Switch to Hamburger */
+     .hamburger {
+          display: block;
+     }
+
+     .nav-links {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          position: absolute;
+          top: 60px;
+          left: 0;
+          background-color: var(--white);
+          padding: 20px 0;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+          z-index: 100;
+     }
+
+     .nav-links.active {
+          display: flex;
+     }
+
+     .nav-links a {
+          background-color: transparent;
+          color: var(--vanilla);
+          border-radius: 0;
+          width: 100%;
+          text-align: center;
+          padding: 15px;
+          border-bottom: 1px solid #eee;
+     }
+
+     .nav-links a:hover {
+          background-color: var(--french-vanilla);
+          box-shadow: none;
+          transform: none;
+     }
+
+      footer {
+          flex-direction: column;
+          text-align: center;
+          width: 100%;
+          padding: 30px 15px;
+     }
+
+     .footer-side, .footer-center {
+          width: 100%;
+          margin-bottom: 20px;
+          align-items: center !important; /* Forces all footer items to center */
+          text-align: center !important;
+     }
+
+     .contact-page {
+          gap: 45px; /* adjust this as necessary to get perfect mobile fit */
+          padding-top: 40px; /* tighten up the padding if necessary - can change or remove */
+     }
+
+     .contact-info, .store-img {
+          margin: 0 auto;
+          width: 95%; /* gives text a little more room on the sides */
+     }
+
+     .directions {
+          margin-bottom: 10px;
+     }
+
+     .contact-details {
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+     }
+
+     .store-img {
+          max-width: 95%; /* let it be wider on mobile */
+          padding: 0;
+     }
+
+     /* Mobile handling for suppliers */
+     .supplier-links {
+          flex-direction: column;
+          width: 100%;
+     }
+}
