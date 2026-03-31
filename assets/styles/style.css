@@ -288,6 +288,7 @@ footer a:hover {
 /* LAYOUT
 /*******************************************/
 
+/* Main Page */
 .mainpage {
   display: flex;
   flex-direction: column;
@@ -315,6 +316,54 @@ footer a:hover {
   margin-bottom: auto; /* Pushes the footer away from thh bottom */
 }
 
+/* About Page */
+
+.about-page > h2 {
+     margin: 5% 0;
+}
+
+.hero-statement {
+     font-weight: bold;
+}
+
+.about-container {
+     display: flex;
+     align-items: flex-start;
+}
+
+.story-container {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+
+.about-paragraph > strong {
+     text-decoration: underline;
+     font-weight: bold;
+}
+
+.about-page p {
+     max-width: 55ch;
+     line-height: 1.5;
+     text-align: left;
+     text-indent: 30px;
+     margin: 10px 0;
+     padding-left: 5%;
+}
+
+.about-image {
+     margin-bottom: 5%;
+}
+
+.about-image > img{
+     max-width: 1400px;
+     width: 65%;
+     height: auto;
+     border-radius: 10%;
+}
+
+/* Contact Page */
 .contact-page {
      display: flex;
      flex-direction: column;
@@ -394,8 +443,18 @@ footer a:hover {
      margin-top: 5px;
 }
 
-.section-title {
+.suppliers-title {
      margin-bottom: 20px; /* forcing space between title and note */
+}
+
+.service-hours > h3 {
+     color: var(--bright-red);
+     margin-top: 20px;
+     
+}
+
+.directions > h3 {
+     color: var(--tertiary-tan)
 }
 
 /* Supplier Section Styling */
@@ -492,6 +551,7 @@ footer a:hover {
 /* MEDIA QUERIES
 /*******************************************/
 @media screen and (max-width: 768px) {
+     /* Base Layout */
      h1 {
           font-size: 2.5rem;
      }
@@ -537,7 +597,7 @@ footer a:hover {
           box-shadow: none;
           transform: none;
      }
-
+     /* Footer fix for mobile */
       footer {
           flex-direction: column;
           text-align: center;
@@ -551,7 +611,37 @@ footer a:hover {
           align-items: center !important; /* Forces all footer items to center */
           text-align: center !important;
      }
+     /* About me page for mobile */
+     .about-container {
+          flex-direction: column;
+          align-items: center;
+     }
 
+     .story-container {
+          width: 100%;
+     }
+
+     .about-page p {
+          padding-left: 0; /* Removes the 5% offset so text doesn't get squished */
+          max-width: 100%; /* Allows text to use full screen width */
+          text-align: center; /* Looks cleaner on mobile when text is center instead of left-aligned */
+          text-indent: 0; /* Removes indedn on mobile (looks broken with indent on mobile screens) */
+          padding: 0 20px; /* Gives text some breathing room from screen edges. */
+     }
+
+     .about-image {
+          width: 100%;
+          order: -1; /* Moves the photo above text on mobile */
+          margin-top: 20px;
+     }
+
+     .about-image > img {
+          width: 90%; /* Makes the photo prominent on mobile */
+          max-width: 400px; /* Prevents it from getting giant on tablets */
+          border-radius: 20px;
+     }
+
+     /* Contact page for mobile */
      .contact-page {
           gap: 45px; /* adjust this as necessary to get perfect mobile fit */
           padding-top: 40px; /* tighten up the padding if necessary - can change or remove */
