@@ -284,6 +284,10 @@ footer a:hover {
      color: var(--tertiary-tan);
 }
 
+#footer-placeholder {
+     margin-top: auto;
+}
+
 /******************************************
 /* LAYOUT
 /*******************************************/
@@ -312,8 +316,8 @@ footer a:hover {
   opacity: 0.9; /* Softens the text up slighly so it doesn't compete with the H1 */
 }
 
-.mainStatement, .about-page p {
-  margin-bottom: auto; /* Pushes the footer away from thh bottom */
+.mainStatement, .support-page, .about-page p {
+  margin-bottom: auto; /* Pushes the footer away from the bottom */
 }
 
 /****** About Page ******/
@@ -424,17 +428,6 @@ footer a:hover {
      border-color: var(--primary-orange);
 }
 
-/* Centered Captions */
-/* .recent-projects figcaption {
-     margin-top: 15px;
-     font-family: "Outfit", sans-serif;
-     font-size: 1.1rem;
-     line-height: 1.4;
-     text-align: center;
-     color: var(--vanilla);
-     max-width: 90%;
-} */
-
 /* Updated Centered & Tinted Captions */
 .recent-projects figcaption {
      margin-top: 12px;
@@ -469,7 +462,135 @@ footer a:hover {
 }
 
 /****** Support/Form Page Styles ******/
+.support-page {
+     max-width: 850px;
+     margin: 0 auto;
+     padding: 60px 20px;
+}
 
+.form-header {
+     text-align: center;
+     margin-bottom: 50px;
+}
+
+.form-header h1 {
+     font-family: 'DM Serif Text', serif;
+     color: var(--tertiary-tan);
+     font-size: 3.5rem;
+     margin-bottom: 15px;
+}
+
+.form-header p {
+     color: var(--vanilla);
+     font-size: 1.1rem;
+     max-width: 600px;
+     margin: 0 auto;
+     line-height: 1.6;
+}
+
+.quote-form {
+     background: var(--charcoal);
+     padding: 45px;
+     border-radius: 25px;
+     border: 1px solid rgba(195, 158, 92, 0.15); /* Subtle tan border */
+     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.form-section {
+     margin-bottom: 35px;
+}
+
+.form-section h3 {
+     color: var(--vanilla);
+     font-family: 'Outfit', sans-serif;
+     font-size: 1.3rem;
+     border-bottom: 1px solid var(--tertiary-tan);
+     padding-bottom: 10px;
+     margin-bottom: 25px;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+}
+
+.form-group {
+     margin-bottom: 25px;
+     display: flex;
+     flex-direction: column;
+}
+
+.form-row {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 25px;
+}
+
+.quote-form label {
+     color: var(--tertiary-tan);
+     font-weight: 700;
+     margin-bottom: 10px;
+     font-family: 'Outfit', sans-serif;
+}
+
+.quote-form input, .quote-form textarea {
+     background: var(--dark-black);
+     border: 1px solid #333;
+     border-radius: 10px;
+     padding: 14px;
+     color: var(--vanilla);
+     font-family: 'Outfit', sans-serif;
+     font-size: 1rem;
+     transition: all 0.3s ease;
+}
+
+quote-form input:focus, .quote-form textarea:focus {
+     outline: none;
+     border-color: var(--primary-orange);
+     box-shadow: 0 0 8px rgba(247, 127, 0, 0.2);
+}
+
+.quote-form small {
+     color: var(--light-tan);
+     margin-top: 8px;
+     font-size: 0.85rem;
+     opacity: 0.8;
+}
+
+.quote-form small a {
+     color: var(--primary-orange);
+     text-decoration: underline;
+}
+
+.submit-btn {
+     width: 100%;
+     background-color: var(--primary-red);
+     color: var(--vanilla);
+     padding: 22px;
+     border: none;
+     border-radius: 12px;
+     font-size: 1.3rem;
+     font-weight: 800;
+     font-family: 'Outfit', sans-serif;
+     cursor: pointer;
+     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.submit-btn:hover {
+     background-color: var(--bright-red);
+     transform: translateY(-4px);
+     box-shadow: 0 8px 20px rgba(228, 54, 54, 0.3);
+}
+
+/****** Support/Form Page ******/
+.form-row {
+     grid-template-columns: 1fr;
+}
+
+.quote-form {
+     padding: 25px;
+}
+
+.form-header h1 {
+     font-size: 2.5rem;
+}
 
 /****** Contact Page ******/
 .contact-page {
