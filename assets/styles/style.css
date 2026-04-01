@@ -288,7 +288,7 @@ footer a:hover {
 /* LAYOUT
 /*******************************************/
 
-/* Main Page */
+/****** Main Page ******/
 .mainpage {
   display: flex;
   flex-direction: column;
@@ -316,7 +316,7 @@ footer a:hover {
   margin-bottom: auto; /* Pushes the footer away from thh bottom */
 }
 
-/* About Page */
+/****** About Page ******/
 
 .about-page > h2 {
      margin: 5% 0;
@@ -363,7 +363,115 @@ footer a:hover {
      border-radius: 10%;
 }
 
-/* Contact Page */
+/****** Gallery Page ******/
+.gallery-page {
+     padding: 20px;
+     max-width: 1400px;
+     margin: 0 auto;
+}
+
+.gallery-page h2 {
+     margin-bottom: 3rem;
+     font-style: italic;
+     opacity: 0.8;
+}
+
+/* Container for each tier */
+.recent-projects {
+     display: grid;
+     /* Creates responsive grid: minimum 300px per item, fills the row */
+     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+     gap: 30px;
+     margin-bottom: 60px;
+     padding: 0 20px;
+}
+
+/* Ensure the heading takes upthe full widt of the grid row */
+.recent-projects h3 {
+     grid-column: 1 / -1;
+     margin-bottom: 20px;
+     border-bottom: 1px solid var(--tertiary-tan);
+     padding-bottom: 10px;
+}
+
+/* Figure Styling */
+.recent-projects figure {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+     cursor: pointer;
+}
+
+/* Image Control */
+.recent-projects img {
+     width: 100%;
+     height: 300px; /* Fixed height for uniformity */
+     object-fit: cover; /* Prevents stretching */
+     border-radius: 12px;
+     border: 1px solid rgba(238, 217, 185, 0.2);
+     transition: all 0.3s ease;
+}
+
+/* The "Pop and Glow" Effect */
+.recent-projects figure:hover {
+     transform: scale(1.03); /* The Pop */
+}
+
+.recent-projects figure:hover img {
+     /* Thje Glow - using the orange variable */
+     box-shadow: 0 0 20px rgba(247, 127, 0, 0.4);
+     border-color: var(--primary-orange);
+}
+
+/* Centered Captions */
+/* .recent-projects figcaption {
+     margin-top: 15px;
+     font-family: "Outfit", sans-serif;
+     font-size: 1.1rem;
+     line-height: 1.4;
+     text-align: center;
+     color: var(--vanilla);
+     max-width: 90%;
+} */
+
+/* Updated Centered & Tinted Captions */
+.recent-projects figcaption {
+     margin-top: 12px;
+     padding: 12px 18px; /* Give the text breathign room inside the tint */
+
+     /* A subtle dark tint using 60% opacity black */
+     background-color: rgba(0, 0, 0, 0.6);
+
+     /* An optional very thin border to define the edge */
+     border: 1px solid rgba(238, 217, 185, 0.1);
+     border-radius: 8px; /* To match the image corners */
+
+     font-family: "Outfit", sans-serif;
+     font-size: 1.05rem;
+     line-height: 1.4;
+     text-align: center;
+     color: var(--vanilla);
+
+     /* Ensuring the tint box doesn't look too stretched on wide screens */
+     max-width: 95%;
+     width: fit-content; /* Shrinks the background to fit the text length */
+     margin-left: auto;
+     margin-right: auto;
+
+     transition: all 0.3s ease;
+}
+
+/* Optional: Make the caption tint slightly brighter when hovering over the whole figure */
+.recent-projects figure:hover figcaption {
+     background-color: rgba(0, 0, 0, 0.8);
+     border-color: var(--tertiary-tan);
+}
+
+/****** Support/Form Page Styles ******/
+
+
+/****** Contact Page ******/
 .contact-page {
      display: flex;
      flex-direction: column;
@@ -383,7 +491,7 @@ footer a:hover {
      margin-bottom: 5px;
      border-bottom: 2px solid var(--primary-red); /* adds nice "underline" anchor */ 
      display: inline-block; /* Keeps border from stretching across whole screen */
-     width: fit-content; /* Shrinks widthto match text */
+     width: fit-content; /* Shrinks width to match text */
      margin: 0 auto 10px; /* Centers box and adds some bottom spacing */
      padding-bottom: 5px;
      font-size: 2rem; /* adjusting address for a little more punch */
@@ -554,6 +662,7 @@ footer a:hover {
      /* Base Layout */
      h1 {
           font-size: 2.5rem;
+          margin-top: 4rem; /* Extra space for the fixed nav on mobile */
      }
 
      h2 {
@@ -639,6 +748,16 @@ footer a:hover {
           width: 90%; /* Makes the photo prominent on mobile */
           max-width: 400px; /* Prevents it from getting giant on tablets */
           border-radius: 20px;
+     }
+
+     /* Gallery page for mobile */
+     .recent-projects {
+          grid-template-columns: 1fr; /* Strict single column for mobile */
+          gap: 40px;
+     }
+
+     .recent-projects img {
+          height: 250px; /* Slightly shorter for mobile */
      }
 
      /* Contact page for mobile */
