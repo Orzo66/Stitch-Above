@@ -249,7 +249,7 @@ footer {
 
 .footer-side img {
      height: auto;
-     width: 10rem;
+     width: 5rem;
 }
 
 .footer-center {
@@ -559,6 +559,13 @@ quote-form input:focus, .quote-form textarea:focus {
      text-decoration: underline;
 }
 
+/* Styling for the number input to match your text inputs */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    opacity: 1; /* Makes the arrows visible on the dark background */
+    filter: invert(1); /* Inverts the color to be light so they stand out */
+}
+
 .submit-btn {
      width: 100%;
      background-color: var(--primary-red);
@@ -590,6 +597,29 @@ quote-form input:focus, .quote-form textarea:focus {
 
 .form-header h1 {
      font-size: 2.5rem;
+}
+
+.quote-form select {
+     background: var(--dark-black);
+     border: 1px solid #333;
+     border-radius: 10px;
+     padding: 14px;
+     color: var(--vanilla);
+     font-family: 'Outfit', sans-serif;
+     font-size: 1rem;
+     width: 100%;
+     cursor: pointer;
+     appearance: none; /* Removes default browser styling */
+     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+     background-repeat: no-repeat;
+     background-position: right 15px center;
+     background-size: 15px;
+}
+
+.quote-form select:focus {
+     outline: none;
+     border-color: var(--primary-orange);
+     box-shadow: 0 0 8px rgba(247, 127, 0, 0.2);
 }
 
 /****** Contact Page ******/
@@ -627,16 +657,10 @@ quote-form input:focus, .quote-form textarea:focus {
      padding: 0 1%;
 }
 
-.directions p {
-     max-width: 55ch; /* Limits line length to ~55 characters per line */
-     margin-left: auto;
-     margin-right: auto;
-     line-height: 1.6; /* Adds some vertical breathing room */
-     text-align: left; /* making left aligned since this is long text and easier to read this way */
-}
-
 /* Style the IMPORTANT parts of the directions */
-.directions strong {
+.self-service strong,
+.directions strong,
+.payment strong {
     color: var(--primary-orange); /* Or --bright-red */
     font-weight: 900;
     /* This creates a subtle "glow" or highlight effect */
@@ -645,6 +669,37 @@ quote-form input:focus, .quote-form textarea:focus {
     border-radius: 4px;
     text-transform: uppercase; /* Makes it look like a road sign */
     border: 1px solid rgba(247, 127, 0, 0.3);
+}
+
+/* Give the italics a subtle glow so they don't get lost on the dark background */
+.self-service em,
+.directions em,
+.payment em {
+    font-style: italic;
+    color: var(--french-vanilla);
+    border-bottom: 1px dashed var(--tertiary-tan);
+}
+
+.email-link {
+     color: var(--banana);
+     text-decoration: none;
+     font-weight: 700;
+     border-bottom: 2px solid rgba(254, 254, 164, 0.3);
+     transition: all 0.4s ease;
+     cursor: pointer;
+}
+
+.email-link:hover,
+.email-link:active {
+     color: #fff; /* Swaps to pure white for maximum contrast */
+     border-bottom-color: var(--banana);
+
+     /* The Glow Effect */
+     text-shadow: 0 0 10px var(--banana),
+                  0 0 20px rgba(254, 254, 164, 0.5);
+     /* Subtle lift to show it's active */
+     transform: tranlateY(-1px);
+     display: inline-block; /* Needed for transform to work properly */
 }
 
 .map-btn {
@@ -740,6 +795,7 @@ quote-form input:focus, .quote-form textarea:focus {
      font-family: "Outfit", sans-serif;
      display: flex;
      flex-direction: column;
+     align-items: center;
      gap: 10px;
      margin: 1% 0;
      /* fix for mobile as email address is so long */
@@ -752,6 +808,39 @@ quote-form input:focus, .quote-form textarea:focus {
      margin-left: auto;
      margin-right: auto;
 }
+
+.entryway-img {
+     width: 100%;
+     max-width: 600px;
+     height: auto;
+     border-radius: 12px;
+     margin: 20px 0;
+}  
+
+/* Mirroring teh directions style for the service hours text */
+.directions p,
+.self-service,
+.payment p {
+     max-width: 55ch; /* Limits line length to ~55 characters per line */
+     margin-left: auto;
+     margin-right: auto;
+     line-height: 1.6; /* Adds some vertical breathing room */
+     text-align: left; /* making left aligned since this is long text and easier to read this way */
+     width: 100%;
+}
+
+.payment h3 {
+     color: var(--tertiary-tan);
+     text-align: center;
+     margin-top: 40px;
+     margin-bottom: 20px;
+}
+
+/* Making sure the headers stay centered */
+.service-hours h3, .directions h3 {
+     text-align: center;
+     margin-bottom: 10px;
+}    
 
 .social-icons img {
      width: 50px;
