@@ -39,16 +39,16 @@
                 <h3>Contact Information</h3>
                 <div class="form-group">
                     <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                    <input type="text" id="name" name="name" required placeholder="John Doe" required>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required placeholder="email@example.com">
+                        <input type="email" id="email" name="email" required placeholder="email@example.com" required>
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555">
+                        <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" maxlength="14" required>
                     </div>
                 </div>
             </div>
@@ -80,11 +80,6 @@
                         <label for="quantity">Total Quantity *</label>
                         <input type="number" id="quantity" name="quantity" required placeholder="0">
                     </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Phone Number *</label>
-                    <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" maxlength="14" required>
                 </div>
             </div>
 
