@@ -34,6 +34,8 @@
 
         <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data" class="quote-form">
             <input type="hidden" name="access_key" value="03c98643-8587-43a1-9158-34516f12f597">
+            <input type="hidden" name="subject" value="New Quote Request from A Stitch Above">
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
             
             <div class="form-section">
                 <h3>Contact Information</h3>
@@ -44,7 +46,7 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required placeholder="email@example.com" required>
+                        <input type="email" id="email" name="email" placeholder="email@example.com">
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone</label>
@@ -113,6 +115,7 @@
                     <label for="file-upload" class="file-label">Upload Logo or Inspiration</label>
                     <input type="file" id="file-upload" name="upload" accept="image/*,.pdf,.ai,.eps">
                     <small>Accepted formats: JPG, PNG, PDF, AI, EPS</small>
+                    <small>(Max file size: 10MB)</small>
                 </div>
             </div>
     
