@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Exclude component files from being indexed directly
+Disallow: /header.html
+Disallow: /footer.html
+
+Sitemap: https://astitchaboveembroidery.com/sitemap.xml
