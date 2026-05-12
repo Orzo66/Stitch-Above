@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // 7. Send the Email and Redirect
     if (mail($to, $subject, $body, $headers)) {
-        header("Location: support.html?status=success");
+        header("Location: thanks.html");
         exit;
     } else {
         echo "Error: The server was unable to process the email.";
