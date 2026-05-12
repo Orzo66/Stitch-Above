@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $body .= "--" . $boundary . "--";
 
     // 7. Send the Email and Redirect
-    if (mail($to, $subject, $body, $headers)) {
+    if (mail($to, $subject, $body, $headers, "-f", $from)) {
         header("Location: thanks.html");
         exit;
     } else {
