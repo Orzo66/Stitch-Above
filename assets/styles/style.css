@@ -380,6 +380,72 @@ footer a:hover {
      opacity: 0.8;
 }
 
+/* Supplier Section Styling */
+.suppliers-title {
+     margin-bottom: 10px; /* forcing space between title and note */
+}
+
+.suppliers-container {
+     margin: 60px auto 120px auto; /* 'auto' on left and right to center container */
+     width: 100%;
+     max-width: 700px;
+     text-align: center;
+}
+
+.suppliers-container h4 {
+     font-family: "Outfit", sans-serif;
+     font-size: 1.35rem;
+     line-height: 1.5;
+     color: var(--vanilla);
+     margin-bottom: 15px;
+     font-weight: 400;
+}
+
+.suppliers-container h4 a {
+     color: var(--tertiary-tan);
+     text-decoration: underline;
+     font-weight: 700;
+     transition: color 0.3s ease;
+}
+
+.suppliers-container h4 a:hover {
+     color: var(--primary-orange);
+}
+
+.supplier-note {
+     font-size: 1.3rem !important; /* hate using these, but necessary here (smaller than main txt */
+     line-height: 1.5;
+     font-style: italic;
+     color: var(--french-vanilla);
+     margin-bottom: 30px;
+}
+
+.supplier-links {
+     display: flex;
+     gap: 20px;
+     justify-content: center;
+}
+
+.supplier-btn {
+     flex: 1;
+     background-color: transparent;
+     border: 2px solid var(--tertiary-tan);
+     color: var(--vanilla);
+     padding: 18px 30px;
+     text-decoration: none;
+     font-family: "Outfit", sans-serif;
+     font-weight: 700;
+     font-size: 1.2rem;
+     border-radius: 8px;
+     transition: all 0.3s ease;
+     text-align: center;
+}
+
+.supplier-btn:hover {
+     background-color: var(--tertiary-tan);
+     color: var(--dark-black);
+}
+
 /* Container for each tier */
 .recent-projects {
      display: grid;
@@ -727,10 +793,6 @@ input[type=number]::-webkit-outer-spin-button {
      margin-top: 5px;
 }
 
-.suppliers-title {
-     margin-bottom: 20px; /* forcing space between title and note */
-}
-
 .service-hours > h3 {
      color: var(--bright-red);
      margin-top: 20px;
@@ -739,49 +801,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 .directions > h3 {
      color: var(--tertiary-tan)
-}
-
-/* Supplier Section Styling */
-.suppliers-container {
-    /* margin: 40px 0; */
-     margin-top: 60px;
-     margin-bottom: 40px;
-     width: 100%;
-     max-width: 600px; /* Keeps it tight like the directions */
-}
-
-.supplier-note {
-     font-size: 1.3rem !important; /* hate using these, but necessary here (smaller than main txt */
-     line-height: 1.5;
-     font-style: italic;
-     color: var(--french-vanilla);
-     margin-bottom: 30px;
-}
-
-.supplier-links {
-     display: flex;
-     gap: 20px;
-     justify-content: center;
-}
-
-.supplier-btn {
-     flex: 1;
-     background-color: transparent;
-     border: 2px solid var(--tertiary-tan);
-     color: var(--vanilla);
-     padding: 18px 30px;
-     text-decoration: none;
-     font-family: "Outfit", sans-serif;
-     font-weight: 700;
-     font-size: 1.2rem;
-     border-radius: 8px;
-     transition: all 0.3s ease;
-     text-align: center;
-}
-
-.supplier-btn:hover {
-     background-color: var(--tertiary-tan);
-     color: var(--dark-black);
 }
 
 .social-row {
@@ -929,6 +948,29 @@ input[type=number]::-webkit-outer-spin-button {
   border: 3px solid var(--french-vanilla);
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Call to Action Button */
+.cta-btn {
+     display: inline-block;
+     background-color: var(--primary-orange);
+     color: var(--vanilla);
+     padding: 15px 35px;
+     text-decoration: none;
+     font-family: "Outfit", sans-serif;
+     font-weight: 800;
+     font-size: 1.2rem;
+     border-radius: 8px;
+     transition: all 0.3s ease;
+     margin: 50px auto;
+     box-shadow: 0 4px 10px rgba(247, 127, 0, 0.3);
+}
+
+.cta-btn:hover {
+     background-color: var(--bright-red);
+     color: var(--vanilla);
+     transform: translateY(-3px);
+     box-shadow: 0 6px 15px rgba(228, 54, 54, 0.4);
 }
 
 
