@@ -605,9 +605,11 @@ footer a:hover {
      font-family: 'Outfit', sans-serif;
      font-size: 1rem;
      transition: all 0.3s ease;
+     width: 100%; /* Prevents the inputs from stretching past the screen */
+     max-width: 100%; /* Safety measure to prevent horizontal scrolling */
 }
 
-quote-form input:focus, .quote-form textarea:focus {
+.quote-form input:focus, .quote-form textarea:focus {
      outline: none;
      border-color: var(--primary-orange);
      box-shadow: 0 0 8px rgba(247, 127, 0, 0.2);
@@ -650,19 +652,6 @@ input[type=number]::-webkit-outer-spin-button {
      background-color: var(--bright-red);
      transform: translateY(-4px);
      box-shadow: 0 8px 20px rgba(228, 54, 54, 0.3);
-}
-
-/****** Support/Form Page ******/
-.form-row {
-     grid-template-columns: 1fr;
-}
-
-.quote-form {
-     padding: 25px;
-}
-
-.form-header h1 {
-     font-size: 2.5rem;
 }
 
 .quote-form select {
@@ -1110,5 +1099,18 @@ input[type=number]::-webkit-outer-spin-button {
      .supplier-links {
           flex-direction: column;
           width: 100%;
+     }
+
+     /****** Support/Form Page ******/
+     .form-row {
+          grid-template-columns: 1fr; /* Stacks the columns on mobile */
+     }
+
+     .quote-form {
+          padding: 25px; /* Shrinks the form padding for smaller screens */
+     }
+
+     .form-header h1 {
+          font-size: 2.5rem;
      }
 }
